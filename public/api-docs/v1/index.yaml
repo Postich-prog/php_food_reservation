@@ -1,28 +1,24 @@
 openapi: 3.0.3
 info:
-  title: Ensi Backend Skeleton (Replace me)
-  contact:
-    name: API Support
-    url: https://ensi.tech/contacts
-    email: mail@greensight.ru
+  title: Reservation
   version: 1.0.0
-  description: Ensi Backend Skeleton Description (Replace me)
+  description: Reservation service
 servers:
   - url: /api/v1
 tags:
-  - name: examples
-    description: Тэг-пример
+  - name: reservation
+    description: reservation service for restaurants (for example)
 paths:
-  /examples/{id}:
+  /reservations/:
     get:
       tags:
-        - examples
-      operationId: getExample
+        - reservation
+      operationId: getAllReservations
       x-lg-handler: 'App\Http\ApiV1\Modules\Foos\Controllers\FoosController@get'
       x-lg-route-name: 'getExample'
       x-lg-skip-request-generation: true
-      summary: Получение объекта типа Example
-      description: Получение объекта типа Example
+      summary: Получение объекта типа Reservation
+      description: Получение объекта типа Reservation
       parameters:
         - $ref: '#/components/parameters/PathId'
         - $ref: '#/components/parameters/QueryInclude'
@@ -33,6 +29,54 @@ paths:
           #  application/json:
           #    schema:
           #      $ref: './customers.yaml#/CustomerResponse'
+        "404":
+          $ref: '#/components/responses/NotFound'
+        "500":
+          $ref: '#/components/responses/ServerError'
+  /reservations/{restaurantID}:
+    get:
+      tags:
+        - reservation
+      operationId: get all reservations in restaurant
+      x-lg-handler: 'App\Http\ApiV1\Modules\Foos\Controllers\FoosController@get'
+      x-lg-route-name: 'getExample'
+      x-lg-skip-request-generation: true
+      summary: Получение объекта типа Reservation
+      description: Получение объекта типа Reservation
+      parameters:
+        - $ref: '#/components/parameters/PathId'
+        - $ref: '#/components/parameters/QueryInclude'
+      responses:
+        #"200":
+        #description: Успешный ответ
+        # content:
+        #  application/json:
+        #    schema:
+        #      $ref: './customers.yaml#/CustomerResponse'
+        "404":
+          $ref: '#/components/responses/NotFound'
+        "500":
+          $ref: '#/components/responses/ServerError'
+  /reservations/{restaurantID}/:
+    post:
+      tags:
+        - reservation
+      operationId: make a reservation in restaurant
+      x-lg-handler: 'App\Http\ApiV1\Modules\Foos\Controllers\FoosController@get'
+      x-lg-route-name: 'getExample'
+      x-lg-skip-request-generation: true
+      summary: Получение объекта типа Reservation
+      description: Получение объекта типа Reservation
+      parameters:
+        - $ref: '#/components/parameters/PathId'
+        - $ref: '#/components/parameters/QueryInclude'
+      responses:
+        #"200":
+        #description: Успешный ответ
+        # content:
+        #  application/json:
+        #    schema:
+        #      $ref: './customers.yaml#/CustomerResponse'
         "404":
           $ref: '#/components/responses/NotFound'
         "500":

@@ -1,3 +1,3 @@
-# Reviews 
+# Reservation
 
-reviews microservice by Slutskikh Matvey
+reservation microservice by Slutskikh Matvey
