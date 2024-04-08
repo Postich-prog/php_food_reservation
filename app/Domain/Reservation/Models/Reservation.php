@@ -10,7 +10,6 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $id
  *
  * @property int $restaurantID
- * @property int $tableID
  * @property int $guests
  * @property Datetime $fromreserve
  * @property Datetime $toreserve
