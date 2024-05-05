@@ -9,6 +9,6 @@ class RestaurantController extends Controller {
     public function index()
     {
         $restaurants = DB::table('restaurants')->get();
-        return view('restaurant.index', ['restaurants' => $restaurants]);
+        return view('restaurant.id', ['restaurants' => $restaurants]);
     }
 }

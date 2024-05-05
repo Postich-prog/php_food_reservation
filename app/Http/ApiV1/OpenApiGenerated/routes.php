@@ -6,5 +6,8 @@
  */
 
 
+use App\Http\ApiV1\Modules\Restaurant\Controllers\RestaurantController;
 use Illuminate\Support\Facades\Route;
 
+Route::post('restaurants', [RestaurantController::class, 'create']);
+Route::get('restaurants/{id}', [RestaurantController::class, 'get']);
