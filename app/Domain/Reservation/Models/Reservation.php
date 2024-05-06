@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $id
  *
  * @property int $restaurant_id
- * @property int $guests
+ * @property int $numguests
  * @property Datetime $fromreserve
  * @property Datetime $toreserve
  *
@@ -20,4 +20,10 @@ use Illuminate\Database\Eloquent\Model;
 class Reservation extends Model
 {
     protected $table = 'reservations';
+    protected $fillable = [
+        'restaurant_id',
+        'numguests',
+        'fromreserve',
+        'toreserve',
+    ];
 }

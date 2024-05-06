@@ -7,6 +7,7 @@
 
 
 use App\Domain\Reservation\Models\Restaurant;
+use App\Http\ApiV1\Modules\Restaurant\Controllers\ReservationController;
 use App\Http\ApiV1\Modules\Restaurant\Controllers\RestaurantController;
 use App\Http\ApiV1\Modules\Restaurant\Resources\RestaurantResource;
 use Illuminate\Support\Facades\Route;
@@ -14,3 +15,6 @@ use Illuminate\Support\Facades\Route;
 Route::post('restaurants', [RestaurantController::class, 'create']);
 Route::get('restaurants/{id}', [RestaurantController::class, 'get']);
 Route::get('restaurants', [RestaurantController::class, 'getAll']);
+
+Route::get('restaurants/{restaurantId}/reservations', [ReservationController::class, 'get']);
+Route::post('restaurants/{restaurantId}/reservations', [ReservationController::class, 'create']);
