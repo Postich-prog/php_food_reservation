@@ -19,4 +19,9 @@ class RestaurantQuery extends QueryBuilder
         // Сортировка по умолчанию
         $this->defaultSort('-id');
     }
+    public function getAll()
+    {
+        return Restaurant::all();
+    }
+
 }

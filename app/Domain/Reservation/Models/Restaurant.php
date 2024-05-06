@@ -5,6 +5,7 @@ namespace App\Domain\Reservation\Models;
 use Carbon\CarbonInterface;
 use DateTime;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * @property int $id
@@ -19,4 +20,8 @@ class Restaurant extends Model
 {
     protected $table = 'restaurants';
     protected $fillable = ['name', 'description'];
+    public function reservations(): HasMany
+    {
+        return $this->hasMany(Reservation::class);
+    }
 }

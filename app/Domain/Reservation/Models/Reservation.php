@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @property int $id
  *
- * @property int $restaurantID
+ * @property int $restaurant_id
  * @property int $guests
  * @property Datetime $fromreserve
  * @property Datetime $toreserve
@@ -19,5 +19,5 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Reservation extends Model
 {
-    protected $table = 'reservation';
+    protected $table = 'reservations';
 }
