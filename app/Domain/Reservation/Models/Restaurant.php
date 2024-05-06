@@ -17,5 +17,6 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Restaurant extends Model
 {
-    protected $table = 'restaurant';
+    protected $table = 'restaurants';
+    protected $fillable = ['name', 'description'];
 }
