@@ -23,7 +23,7 @@ class ReservationController
 
     public function get($restaurantId): AnonymousResourceCollection
     {
-        $reservations = Reservation::where('restaurant_id', $restaurantId)->get();
+        $reservations = Reservation::where('restaurant', $restaurantId)->get();
 
         return ReservationResource::collection($reservations);
     }
